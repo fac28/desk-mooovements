@@ -11,7 +11,7 @@ export default function Carousel(props: any) {
   }
   function SubtractFromSlide() {
     const length = props.places ? props.places.length : props.cities.length;
-    if (slide <= 0) setSlide(length -1);
+    if (slide <= 0) setSlide(length - 1);
     else setSlide(slide - 1);
   }
   const [slide, setSlide] = useState(0);
@@ -21,12 +21,11 @@ export default function Carousel(props: any) {
       {props.places && (
         <Link href={`/places/${props.places[slide].id}`}>
           <div className='w-fit border-4 border-double border-yellow-500'>
-            <Image
+            <img
               src={props.places[slide].image}
               alt='Picture of a workspace'
               width={200}
               height={200}
-              priority={true}
             />
             <p>{props.places[slide].name}</p>
             <p>{props.places[slide].address}</p>
@@ -36,7 +35,7 @@ export default function Carousel(props: any) {
       {props.cities && (
         <Link href={`cities/${props.cities[slide].id}`}>
           <div className='w-fit border-4 border-double border-yellow-500'>
-          <Image
+            <Image
               src={props.cities[slide].image}
               alt='Picture of a workspace'
               width={200}
@@ -64,7 +63,6 @@ export default function Carousel(props: any) {
             SubtractFromSlide();
           }
         }}
-        
       >
         Prev
       </button>
